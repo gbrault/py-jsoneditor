@@ -22,7 +22,7 @@ setup(
     version=version,
     packages=["jsoneditor"],
     include_package_data=True,
-    url="https://github.com/dermasmid/py-jsoneditor",
+    url="https://github.com/gbrault/py-jsoneditor",
     license="MIT",
     long_description=readme,
     long_description_content_type="text/markdown",
