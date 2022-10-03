@@ -25,7 +25,7 @@ function init(data) {
 
 function makeSureServerIsClosed() {
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", window.location.origin + '/close');
+    xhr.open("GET", window.location.href + '/close');
     xhr.onerror = () => {}
     xhr.send(null);
 }
@@ -38,7 +38,7 @@ function addCallbackButton(jsoneditorMenu, editor) {
     jsoneditorMenu.append(callbackButton)
     callbackButton.onclick = () => {
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", window.location.origin + '/callback', true);
+        xhr.open("POST", window.location.href + '/callback', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({
             data: editor.get()
@@ -59,7 +59,7 @@ function addCloseButton(jsoneditorMenu) {
                 window.close();
             }
         }
-        xhr.open("GET", window.location.origin + '/close');
+        xhr.open("GET", window.location.href + '/close');
         xhr.onerror = () => {
             window.close();
         }
@@ -76,7 +76,7 @@ function getData() {
             init(data)
         }
     };
-    xhr.open("GET", window.location.origin + '/get_data', true);
+    xhr.open("GET", window.location.href + '/get_data', true);
     xhr.send();
 }
 
